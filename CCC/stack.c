@@ -1,12 +1,12 @@
 #include<stdio.h>
-#include<conio.h>
+#include<stdlib.h>
 
 #define MAXSIZE 100
 
 struct stack
 {
 	int stack[MAXSIZE];
-	int TOP;
+	int Top;
 
 };
 
@@ -19,7 +19,7 @@ void push(NODE *pu)
 	if(pu->Top == MAXSIZE - 1)
 	{
 		printf("\nThe Stack is Full");
-		getch();
+		getchar();
 	}
 	else
 	{
@@ -33,7 +33,7 @@ void pop(NODE *po)
 {
 	int item;
 
-	if(po->TOP == -1)
+	if(po->Top == -1)
 	{
 		printf("\nThe Stack is Empty");
 	}
@@ -46,7 +46,7 @@ void pop(NODE *po)
 
 void printAll(NODE *pt)
 {
-	int item;
+	int item, i;
 
 	if(pt->Top == -1)
 	{
@@ -57,12 +57,12 @@ void printAll(NODE *pt)
 		printf("\n \nThe elements in the Stack is/are...");
 		for(i = pt->Top; i >= 0; i--)
 		{
-			printf("\n %d", stack[i]);
+			printf("\n %d", pt->stack[i]);
 		}
 	}
 }
 
-void main()
+int main()
 {
 		int choice;
 		char ch;
@@ -72,7 +72,7 @@ void main()
 		ps->Top=-1;
 		do
 		{
-			clrscr();
+			system("clear");
 			//Menu for the stack operations
 			printf("\n1 PUSH");
 			printf("\n2 POP");
@@ -96,7 +96,9 @@ void main()
 			printf("\n \nPress (Y/y) To Continue = ");
 			//Removing all characters in the input buffer
 			//for fresh input() especially <<ENTER>> key
-			fflush(stdin);
+			while((ch == getchar()) != '\n' && ch != EOF);
 			scanf("%c", &ch);
-		} while(ch == 'Y' || ch == 'y'):
+	} while(ch == 'Y' || ch == 'y');
+
+	return 0;
 }
