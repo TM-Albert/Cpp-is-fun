@@ -96,7 +96,7 @@ int main()
 			printf("\n \nPress (Y/y) To Continue = ");
 			//Removing all characters in the input buffer
 			//for fresh input() especially <<ENTER>> key
-			while((ch == getchar()) != '\n' && ch != EOF);
+			while((ch = getchar()) != '\n' && ch != EOF);
 			scanf("%c", &ch);
 	} while(ch == 'Y' || ch == 'y');
 
