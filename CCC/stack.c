@@ -28,3 +28,20 @@ void push(NODE *pu)
 		pu->stack[++pu->Top]=item;
 	}
 }
+
+void pop(NODE *po)
+{
+	int item;
+
+	if(po->TOP == -1)
+	{
+		printf("\nThe Stack is Empty");
+	}
+	else
+	{
+		item = po->stack[po->Top--];
+		printf("\nThe Deleted Element is = %d", item);
+	}
+}
+
+
