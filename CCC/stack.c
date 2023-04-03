@@ -61,3 +61,42 @@ void printAll(NODE *pt)
 		}
 	}
 }
+
+void main()
+{
+		int choice;
+		char ch;
+
+		NODE *ps;
+
+		ps->Top=-1;
+		do
+		{
+			clrscr();
+			//Menu for the stack operations
+			printf("\n1 PUSH");
+			printf("\n2 POP");
+			printf("\n3 PRINTALL");
+			printf("\nEnter your Choice = ");
+			scanf("%d", &choice);
+			switch(choice)
+			{
+				case 1:
+					push(ps);
+					break;
+				case 2:
+					pop(ps);
+					break;
+				case 3:
+					printAll(ps);
+					break;
+				default:
+					printf("\nYou Entered wrong choice");
+			}
+			printf("\n \nPress (Y/y) To Continue = ");
+			//Removing all characters in the input buffer
+			//for fresh input() especially <<ENTER>> key
+			fflush(stdin);
+			scanf("%c", &ch);
+		} while(ch == 'Y' || ch == 'y'):
+}
