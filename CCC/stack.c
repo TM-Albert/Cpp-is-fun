@@ -44,4 +44,20 @@ void pop(NODE *po)
 	}
 }
 
+void printAll(NODE *pt)
+{
+	int item;
 
+	if(pt->Top == -1)
+	{
+		printf("\nThe Stack is Empty");
+	}
+	else
+	{
+		printf("\n \nThe elements in the Stack is/are...");
+		for(i = pt->Top; i >= 0; i--)
+		{
+			printf("\n %d", stack[i]);
+		}
+	}
+}
