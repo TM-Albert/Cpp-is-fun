@@ -67,9 +67,9 @@ int main()
 		int choice;
 		char ch;
 
-		NODE *ps;
-
+		NODE *ps = (NODE*)malloc(sizeof(NODE));
 		ps->Top=-1;
+
 		do
 		{
 			system("clear");
